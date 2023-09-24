@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
 
-        {% block javascripts %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {% block stylesheets %}
+    {% endblock %}
+
+    {% block javascripts %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+    <form method="get">
+        <h2>Calcul de n!</h2>
+        <input type="number" name="fact" id="fact" min=0 max=100 placeholder="n" >
+        <input type="submit" value="OK">
+        <br><br>
+    </form>
+    <form method="get">
+        <h2>Calcul des combinaisons de n éléments dans p places</h2>
+        <input type="number" name="combi_n" id="combi_n" min=0 max=100 placeholder="n" {% if n is defined %} value={{n}} {% endif %}>
+        <input type="number" name="combi_p" id="combi_p" min=0 max=100 placeholder="p" {% if p is defined %} value={{p}} {% endif %}>
+        <input type="submit" value="OK">
+        <br><br>
+    </form>
+    {% endblock %}
+    <div id="resultats">
+    {% block resultats %}
+    {% endblock %}
+    </div>
+</body>
+
 </html>

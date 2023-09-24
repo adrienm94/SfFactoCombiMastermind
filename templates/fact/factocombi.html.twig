@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats{% endblock %}
+
+{% block resultats %}
+	<h2>Résultats</h2>
+	{% if k is defined %}
+	<p>Factorielle( {{ k }} ) = {{ r }}</p>
+
+	{% elseif n is defined and p is defined%}
+	<p>Combinaisons( {{ n }}, {{ p }} ) = {{ r }}</p>
+	{% endif %}
+	<p><a href={{ path('app_fact') }}>Accueil</a></p>
+{% endblock %}
