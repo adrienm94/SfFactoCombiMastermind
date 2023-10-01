@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
-use PhpParser\Node\Expr\Cast\Int_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 class FactController extends AbstractController
 {
